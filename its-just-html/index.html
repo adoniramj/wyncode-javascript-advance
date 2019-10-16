@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>It's just HTML</title>
+</head>
+
+<body>
+    <ul class="characters">
+        <li class="character">
+            <h1 class="name">Cersei</h1>
+            <h2 class="title">Queen Mother</h2>
+            <span class="house">House Lannister</span>
+        </li>
+        <li class="character">
+            <h1 class="name">Cersei</h1>
+            <h2 class="title">Queen Mother</h2>
+            <span class="house">House Lannister</span>
+        </li>
+    </ul>
+</body>
+<script>
+    function createNode(type, attribute, attributeValue, text = null) {
+        const node = document.createElement(type)
+        const att = document.createAttribute(attribute)
+        att.value = attributeValue
+        node.setAttributeNode(att)
+        if (text) {
+            node.textContent = text
+        }
+        return node;
+    }
+    const li = createNode('li', 'class', 'character')
+    const h1 = createNode('h1', 'class', 'name', 'Vader')
+    const h2 = createNode('h2', 'class', 'title', 'The Man')
+    const span = createNode('span', 'class', 'house', 'House of Skywalker')
+    li.appendChild(h1)
+    li.appendChild(h2)
+    li.appendChild(span)
+    document.querySelector('.characters').appendChild(li)
+</script>
+
+</html>
