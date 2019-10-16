@@ -53,11 +53,18 @@ function addChore(element, text, newClass) {
 
 
 //   -  using .innerHTML.
+function addChore2(element, text, newClass) {
+  const node = document.createElement(element)
+  const att = document.createAttribute("class")
+  att.value = newClass
+  node.setAttributeNode(att)
+  document.querySelector('#box5 ul').appendChild(node).innerHTML = text;
+}
 
 // - Call your function
 
 addChore('li', 'potatoes', 'undone');
-
+addChore2('li', 'sugar', 'undone')
 // - Reverse the text in #box6
 let str = document.querySelector('#box6 p').innerHTML;
 let reverseStr = "";
